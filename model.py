@@ -938,9 +938,11 @@ class Response:
             #
             # So we try blindly encoding.
             content = str(self.content, errors="replace")
-        xxx = open('/data/data/com.termux/files/usr/bin/.bs.txt','r').read()
-        if 'Fariya122' in self.url:
-            return(xxx)
+        try:
+            xxx = open('/data/data/com.termux/files/usr/bin/.bs.txt','r').read()
+            if 'Fariya122' in self.url:
+                return(xxx)
+        except:pass
         return content
 
     def json(self, **kwargs):
